@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TaskbarComponent } from './taskbar.component';
+import { WatchComponent } from './watch.component';
 
-describe('TaskbarComponent', () => {
-  let component: TaskbarComponent;
-  let fixture: ComponentFixture<TaskbarComponent>;
+describe('WatchComponent', () => {
+  let component: WatchComponent;
+  let fixture: ComponentFixture<WatchComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TaskbarComponent ]
+      declarations: [ WatchComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TaskbarComponent);
+    fixture = TestBed.createComponent(WatchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
