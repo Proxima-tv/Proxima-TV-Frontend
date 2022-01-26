@@ -4,7 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HistoryandcommentsComponent } from './historyandcomments/historyandcomments.component';
 import { StatsComponent } from './stats/stats.component';
 import { TaskbarComponent } from './taskbar/taskbar.component';
 import { CommentsComponent } from './comments/comments.component';
@@ -17,7 +16,6 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    HistoryandcommentsComponent,
     StatsComponent,
     TaskbarComponent,
     CommentsComponent,
