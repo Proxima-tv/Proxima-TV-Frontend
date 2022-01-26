@@ -8,6 +8,11 @@ import { StatsComponent } from './stats/stats.component';
 import { TaskbarComponent } from './taskbar/taskbar.component';
 import { CommentsComponent } from './comments/comments.component';
 import { HistoryComponent } from './history/history.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { FormsComponent } from './forms/forms.component';
+import { QuestionsComponent } from './questions/questions.component';
+import { ServicePreviewComponent } from './service-preview/service-preview.component';
+
 
 const routes: Routes = [
   { path: 'stats', component: StatsComponent }
@@ -19,8 +24,12 @@ const routes: Routes = [
     StatsComponent,
     TaskbarComponent,
     CommentsComponent,
-    HistoryComponent
-  ],
+    HistoryComponent,
+    NavbarComponent,
+    FormsComponent,
+    QuestionsComponent,
+    ServicePreviewComponent
+  ]
   imports: [
     BrowserModule,
     AppRoutingModule,
