@@ -12,10 +12,14 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FormsComponent } from './forms/forms.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { ServicePreviewComponent } from './service-preview/service-preview.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 
 const routes: Routes = [
-  { path: 'stats', component: StatsComponent }
+  { path: 'stats', component: StatsComponent },
+  { path: 'login', component : LoginComponent },
+  { path: 'register', component : RegisterComponent }
 ];
 
 @NgModule({
@@ -28,8 +32,10 @@ const routes: Routes = [
     NavbarComponent,
     FormsComponent,
     QuestionsComponent,
-    ServicePreviewComponent
-  ]
+    ServicePreviewComponent,
+    LoginComponent,
+    RegisterComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
