@@ -22,6 +22,7 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginModule } from './login/login.module';
+import { RegisterModule } from './register/register.module';
 
 
 const routes: Routes = [
@@ -59,6 +60,7 @@ const routes: Routes = [
     BrowserModule,
     AppRoutingModule,
     LoginModule,
+    RegisterModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],

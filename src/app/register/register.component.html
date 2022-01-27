@@ -1,29 +1,38 @@
 <div class="form-signin">
-  <form>
-    <img class="mb-4" src="/assets/logo.png" alt="" width="72" height="57">
+  <form (ngSubmit)="onSubmit()" style="margin-top: 20%;">
     <h1 class="h3 mb-3 fw-normal" style="text-align: center;">Register</h1>
-
-    <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-      <label for="floatingInput">Family Name</label>
+    <p style="text-align: center;"><span style="color: #ff7675;">*</span> Symbolizes required fields</p>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-floating">
+          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" [(ngModel)]="username" name="username">
+          <label for="floatingInput">Username<span style="color: #ff7675;">*</span></label>
+        </div>
+        <div class="form-floating">
+          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" [(ngModel)]="email" name="email">
+          <label for="floatingInput">Email<span style="color: #ff7675;">*</span></label>
+        </div>
+        <div class="form-floating">
+          <input type="password" class="form-control" id="floatingInput" placeholder="Secure Password" [(ngModel)]="password" name="password">
+          <label for="floatingInput">Password<span style="color: #ff7675;">*</span></label>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-floating">
+          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" [(ngModel)]="firstname" name="firstname">
+          <label for="floatingInput">Firstname</label>
+        </div>
+        <div class="form-floating">
+          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" [(ngModel)]="lastname" name="lastname">
+          <label for="floatingInput">Lastname</label>
+        </div>
+        <div class="form-floating">
+          <input type="password" class="form-control" id="floatingInput" placeholder="Secure Password x2" [(ngModel)]="password_verify" name="password_verify">
+          <label for="floatingInput">Verify Password<span style="color: #ff7675;">*</span></label>
+        </div>
+      </div>
     </div>
-    <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-      <label for="floatingPassword">Username</label>
-    </div>
-    <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">Email address</label>
-      </div>
-      <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">Password</label>
-      </div>
-      <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">Password confirm</label>
-      </div>
-    
+    <br>
     <button class="w-100 btn btn-lg btn-primary" type="submit">Register now</button>
   </form>
 </div>
