@@ -8,5 +8,10 @@ import { CryptoService } from './crypto.service';
 })
 export class AuthService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  register(data:object){
+    this.http.post('http://localhost:3000/users/register',data, {})
+  }
+  login(data:object){}
 }
