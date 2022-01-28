@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AppModule } from '../app.module';
 
 @Component({
   selector: 'app-forms',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormsComponent implements OnInit {
 
-  constructor() { }
+  email:string;
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
 
+  redirect(){
+    this.router.navigate(['/register/' + this.email]);
+  }
 }

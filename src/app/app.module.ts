@@ -23,18 +23,16 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginModule } from './login/login.module';
 import { RegisterModule } from './register/register.module';
-
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
+  { path: '', component: HomeComponent},
   { path: 'stats', component: StatsComponent },
-  { 
-    path: 'watch/:watch',
-    component: WatchComponent 
-  },
+  { path: 'watch/:watch', component: WatchComponent },
   { path: 'settings', component: SettingsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  
+  { path: 'register/:email', component: RegisterComponent },
 ];
 
 @NgModule({
@@ -52,7 +50,8 @@ const routes: Routes = [
     WatchComponent,
     WatchCommentsComponent,
     RecommendationsComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent
   ],
   imports: [
     FormsModule,
