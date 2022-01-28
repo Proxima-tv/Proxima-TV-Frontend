@@ -6,7 +6,7 @@ export class CryptoService {
 
   private static secretKey = "";
 
-  private static makeid(length:number):string {
+  static makeid(length:number):string {
     var result           = '';
     var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     var charactersLength = characters.length;
@@ -15,7 +15,7 @@ export class CryptoService {
   }
 
   static setKey(k:string) { this.secretKey = k; }
-  
+
   //The set method is use for encrypt the value.
   static encrypt(data:string){
     var key = CryptoJS.enc.Utf8.parse(this.secretKey);
@@ -41,7 +41,7 @@ export class CryptoService {
     return out;
   }
 
-    //The get method is use for decrypt the value.
+  //The get method is use for decrypt the value.
   static decrypt(data:any){
     console.log("Initial Vector: " + data['iv']);
 
