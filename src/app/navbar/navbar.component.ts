@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,10 +7,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  static isLoggedIn: Boolean;
 
-  constructor() { }
+  constructor( private cookieService: CookieService ) { }
+
+  loginSec = '<a href="/login">Login</a> | <a href="/register">Register</a>';
+  isLoggedIn = false;
 
   ngOnInit(): void {
+    // checks for login cookie to ensure the proper menu is shown
+    if(this.cookieService.get('proxima-user') == "") {
+    } else {
+      console.log(this.cookieService.get('proxima-login'))
+    }
+
+    // checks a variable isLoggedIn to determin UserMenuState
+    if(this.isLoggedIn) {
+      
+    } else {
+      this.loginSec = '<a href="/login">Login</a> | <a href="/register">Register</a>';
+    }
   }
 
+  static setLogin(loggedIn:Boolean) {
+    this.isLoggedIn = loggedIn;
+  }
 }

@@ -15,7 +15,7 @@ export class PlayerComponent implements OnInit {
     console.log(watch);
 
     // TODO: get video from api
-
+    // REQUIREMENT: wait for networking to be able calling api (WIP)
   }
 
 }

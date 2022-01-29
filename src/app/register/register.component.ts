@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { last } from 'rxjs';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-register',
@@ -7,9 +10,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  username:string;
+  password:string;
+  password_verify:string;
+  email:string;
+  firstname = null;
+  lastname = null;
+  name = null;
 
-  ngOnInit(): void {
+  constructor(private http: HttpClient) { }
+
+  ngOnInit(): void { }
+
+  onSubmit(){
+    if(this.password == this.password_verify) {
+      // TODO check that password matches required complexity
+
+      if(this.firstname != null) this.name += this.firstname;
+      if(this.lastname != null) this.name += this.lastname; 
+
+      const user = {
+        username: this.username,
+        email: this.email,
+        password:this.password,
+        name: this.name
+      }
+
+      // TODO send to auth service to register at the backend
+      this.http.post<any>('http://localhost:3000/user/register', user).subscribe(data => {
+        console.log(data['success']);
+      });
+    }
   }
-
 }
