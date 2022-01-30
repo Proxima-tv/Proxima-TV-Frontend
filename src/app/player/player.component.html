@@ -1,7 +1,6 @@
 <div class="container" style="padding:0 2% 0; width: 100%;">
-    <video width="100%" poster="poster.jpg" controls>
-        <source src="video.mp4" type="video/mp4">
-        <source src="video.ogg" type="video/ogg">
+    <video #videoPlayer width="100%" poster="{{thumbnail}}" controls controlsList="nodownload">
+        <source src="{{video}}" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 </div>
