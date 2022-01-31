@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import * as CryptoJS from 'crypto-js';
 
 @Injectable({ providedIn: 'root' })
+/**
+ * @deprecated in its current state the cryptoservice in nonfunctional
+ */
 export class CryptoService {
 
   private static secretKey = "";
