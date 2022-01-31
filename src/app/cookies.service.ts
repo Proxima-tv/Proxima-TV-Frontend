@@ -30,6 +30,6 @@ export class CookiesService {
    * @param values the value to store inside the cookie
    */
   setCookie(cookieName:string, values:object){
-    this.service.set(cookieName, JSON.stringify(values))
+    this.service.set(cookieName, `${values['username']},${values['email']},${values['userid']},`)
   }
 }
