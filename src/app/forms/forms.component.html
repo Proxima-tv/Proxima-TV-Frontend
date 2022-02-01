@@ -1,5 +1,5 @@
 
-<div style="background-color: rgb(94, 93, 93); height: 450px;">
+<div style="background-color: rgb(73, 73, 73); height: 450px;">
         <div class="container" style="padding-top: 200px;">
                 <div class="row">
                         <div class="col-3"></div>
@@ -8,10 +8,10 @@
                                 <form (submit)="redirect()">
                                         <div class="row">
                                                 <div class="col-9">                       
-                                                        <input type="email" class="form-control" id="frontPageEmailInput" placeholder="name@example.com" [(ngModel)]="email" name="email">
+                                                        <input type="email" class="form-control" id="frontPageEmailInput" placeholder="name@example.com" name="email">
                                                 </div>
                                                 <div class="col-3">                        
-                                                        <button class="btn btn-success" type="submit">Register</button>
+                                                        <button class="btn btn-success" type="submit" onclick="window.location.replace('/register/' + document.getElementById('frontPageEmailInput').value)">Register</button>
                                                 </div>
                                         </div>
                                 </form>

@@ -1,7 +1,8 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder} from '@angular/forms';
-import { CryptoService } from '../crypto.service';
+import { Router } from '@angular/router';
+import { CookiesService } from '../cookies.service';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-login',
@@ -11,10 +12,13 @@ import { CryptoService } from '../crypto.service';
 export class LoginComponent implements OnInit {
   public logEmail: any;
   public logPassword: any;
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private cookies: CookiesService,
+    private router: Router
+  ) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   onSubmit(): void {
     const user = {
@@ -23,13 +27,22 @@ export class LoginComponent implements OnInit {
     };
 
     let params = new HttpParams()
-    .set('user',JSON.stringify(user));
+      .set('user',JSON.stringify(user));
 
     // this should use the body but has to revert back to using query strings
     this.http.get<any>('http://localhost:3000/user/login', {
       params: params
-    }).subscribe(data => {
+    }).subscribe(async data => {
       console.log(JSON.stringify(data));
+      this.cookies.setCookie('proxima-login-cookie', {
+        "username": data['payload'].username,
+        "email": data['payload'].email,
+        "userid": data['payload'].userid,
+      });
+      NavbarComponent.isLoggedIn = true;
+      this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+        this.router.navigate(['/profile']);
+      });
     });
   }
 }

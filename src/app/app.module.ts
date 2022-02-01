@@ -1,6 +1,4 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'; 
-import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -28,7 +26,7 @@ import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
-  { path: 'stats', component: StatsComponent },
+  { path: 'profile', component: StatsComponent },
   { path: 'watch/:watch', component: WatchComponent },
   { path: 'settings', component: SettingsComponent },
   { path: 'login', component: LoginComponent },
@@ -56,8 +54,6 @@ const routes: Routes = [
     SearchComponent
   ],
   imports: [
-    FormsModule,
-    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     LoginModule,
