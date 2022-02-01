@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class PlayerComponent implements OnInit {
   @ViewChild('videoPlayer') videoplayer: ElementRef;
 
-  video:string;
+  videoLoc:string;
   thumbnail:string;
 
   constructor(
@@ -27,22 +27,19 @@ export class PlayerComponent implements OnInit {
     // PROGRESS: the player is able to hotload videolinks and play them
 
     const vidQuery = {
-      video: this.activatedRoute.snapshot.params['query']
+      video: this.activatedRoute.snapshot.params['watch']
     };
 
     let params = new HttpParams()
     .set('vidQuery',JSON.stringify(vidQuery));
     this.thumbnail = null;    
-    this.video = "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4";
-    this.videoplayer?.nativeElement.load();
-
-    /*this.http.get<any>('http://localhost:3000/videos/video', {
+    
+    this.http.get<any>('http://localhost:3000/videos/video', {
       params: params
     }).subscribe(data => {
-      console.log(JSON.stringify(data));
-      this.video = data.video;
+      this.videoLoc = data.file;
       this.thumbnail = data.thumbnail;
       this.videoplayer?.nativeElement.load();
-    });*/
+    });
   }
 }
