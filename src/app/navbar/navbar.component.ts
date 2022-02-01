@@ -20,13 +20,6 @@ export class NavbarComponent implements OnInit {
     } else {
       console.log(this.cookieService.get('proxima-login'))
     }
-
-    // checks a variable isLoggedIn to determin UserMenuState
-    if(this.isLoggedIn) {
-      
-    } else {
-      this.loginSec = '<a href="/login">Login</a> | <a href="/register">Register</a>';
-    }
   }
 
   static setLogin(loggedIn:Boolean) {
