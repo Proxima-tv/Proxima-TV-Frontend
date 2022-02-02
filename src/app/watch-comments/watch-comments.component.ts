@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WatchCommentsComponent implements OnInit {
 
+  comment:String;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  sendComment(){}
 }

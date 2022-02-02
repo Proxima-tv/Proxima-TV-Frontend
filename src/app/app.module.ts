@@ -23,6 +23,7 @@ import { LoginModule } from './login/login.module';
 import { RegisterModule } from './register/register.module';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -58,6 +59,7 @@ const routes: Routes = [
     AppRoutingModule,
     LoginModule,
     RegisterModule,
+    EditorModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],
