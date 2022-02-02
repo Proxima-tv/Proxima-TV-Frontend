@@ -24,6 +24,10 @@ export class CookiesService {
     return this.service.getAll();
   }
 
+  deleteCookie(name:string){
+    this.service.delete(name);
+  }
+
   /**
    * sets specified cookies
    * @param cookieName the name of the cookie to store

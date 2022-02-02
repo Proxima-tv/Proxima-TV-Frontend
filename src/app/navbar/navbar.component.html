@@ -15,15 +15,16 @@
                         <a class="btn btn-outline-success" type="submit" href="search.html">Search</a>
                     </form>
                 </div>                       
-                <div class="col-2" style="padding-top: 10px;" [innerHTML]="loginSec">
-                    <div class="dropdown">
+                <div class="col-2" style="padding-top: 10px;">
+                    <span *ngIf="!isLoggedIn"><a href="/login">Login</a> | <a href="/register">Register</a></span>
+                    <div class="dropdown" *ngIf="isLoggedIn">
                         <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%;">
                             <img src="https://cdn.slpnetwork.de/img/sys/users/Thesteev.png" width="30px" height="30px" style="border-radius: 50%;"> The Steev
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="width: 100%;">
-                            <li><a class="dropdown-item" href="profile.html">Profile</a></li>
-                            <li><a class="dropdown-item" href="settings.html">Settings</a></li>
-                            <li><a class="dropdown-item" href="logout.html" style="color: #e74c3c;" href="#">Logout</a></li>
+                            <li><a class="dropdown-item" href="/profile">Profile</a></li>
+                            <li><a class="dropdown-item" href="/settings">Settings</a></li>
+                            <li><a class="dropdown-item" (click)="logout()" style="color: #e74c3c;" href="#">Logout</a></li>
                         </ul>
                     </div>
                 </div>
