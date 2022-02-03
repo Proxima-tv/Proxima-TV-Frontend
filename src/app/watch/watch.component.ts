@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./watch.component.css']
 })
 export class WatchComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit(): void {

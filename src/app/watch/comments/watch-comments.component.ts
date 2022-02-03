@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-watch-comments',
@@ -7,12 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WatchCommentsComponent implements OnInit {
 
-  comment:String;
+  commentContent:any;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  sendComment(){}
+  sendComment(){
+    console.log(this.commentContent);
+  }
 }

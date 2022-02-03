@@ -1,24 +1,26 @@
 <div class="container">
     <br>
     <editor
-        apiKey="dp4qyxw5ckpbf2awjg2iieefji5mlsu2ev7w2p306me79h0g"
-        [init]="{
-            height: 300,
-            resize: false,
-            menubar: false,
-            plugins: [
-                'advlist autolink lists link image charmap print preview anchor',
-                'searchreplace visualblocks code fullscreen',
-                'insertdatetime media table paste code help wordcount'
-            ],
-            toolbar:
-                'undo redo | formatselect | bold italic backcolor | \
-                alignleft aligncenter alignright alignjustify | \
-                bullist numlist outdent indent | removeformat | help'
-            }"
+    apiKey="dp4qyxw5ckpbf2awjg2iieefji5mlsu2ev7w2p306me79h0g"
+    [(ngModel)]="commentContent"
+    name="commentContent"
+    [init]="{
+        height: 300,
+        resize: false,
+        menubar: false,
+        plugins: [
+            'advlist autolink lists link image charmap print preview anchor',
+            'searchreplace visualblocks code fullscreen',
+            'insertdatetime media table paste code help wordcount'
+        ],
+        toolbar:
+            'undo redo | formatselect | bold italic backcolor | \
+            alignleft aligncenter alignright alignjustify | \
+            bullist numlist outdent indent | removeformat | help'
+        }"
     ></editor>
     <br>
-    <button class="btn btn-success" type="submit" (click)="sendComment">Send Comment</button>
+    <button class="btn btn-success" type="submit" (click)="sendComment()">Send Comment</button>
     <br>
     <h1 style="text-align: center;">Kommentare & Bewertungen</h1>
     <hr>

@@ -12,10 +12,7 @@ import { FormsComponent } from './forms/forms.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { ServicePreviewComponent } from './service-preview/service-preview.component';
 import { SettingsComponent } from './settings/settings.component';
-import { PlayerComponent } from './player/player.component';
 import { WatchComponent } from './watch/watch.component';
-import { WatchCommentsComponent } from './watch-comments/watch-comments.component';
-import { RecommendationsComponent } from './recommendations/recommendations.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -23,7 +20,7 @@ import { LoginModule } from './login/login.module';
 import { RegisterModule } from './register/register.module';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
-import { EditorModule } from '@tinymce/tinymce-angular';
+import { WatchModule } from './watch/watch.module';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -46,20 +43,16 @@ const routes: Routes = [
     QuestionsComponent,
     ServicePreviewComponent,
     SettingsComponent,
-    PlayerComponent,
-    WatchComponent,
-    WatchCommentsComponent,
-    RecommendationsComponent,
     FooterComponent,
     HomeComponent,
-    SearchComponent
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     LoginModule,
     RegisterModule,
-    EditorModule,
+    WatchModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],
