@@ -72,7 +72,7 @@ export class WatchCommentsComponent implements OnInit {
           commentP.appendChild(commentText);
           commentP.classList.add("card-text");
 
-          this.cl.nativeElement.appendChild(li);
+          this.cl.nativeElement.prepend(li);
         }
     });
 
@@ -119,7 +119,7 @@ export class WatchCommentsComponent implements OnInit {
     commentP.classList.add("card-text");
     console.log(li);
 
-    this.cl.nativeElement.appendChild(li);
+    this.cl.nativeElement.prepend(li);
 
     // sends the comment to the server
     this.http.post<any>("http://localhost:3000/comments/comment", {
