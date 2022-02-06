@@ -7,6 +7,7 @@ import { PlayerComponent } from './player/player.component';
 import { RecommendationsComponent } from './recommendations/recommendations.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EditorModule } from '@tinymce/tinymce-angular';
+import { WatchStatsComponent } from './watch-stats/watch-stats.component';
 
 
 
@@ -15,7 +16,8 @@ import { EditorModule } from '@tinymce/tinymce-angular';
     WatchComponent,
     WatchCommentsComponent,
     PlayerComponent,
-    RecommendationsComponent
+    RecommendationsComponent,
+    WatchStatsComponent
   ],
   imports: [
     CommonModule,
