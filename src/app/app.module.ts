@@ -23,6 +23,7 @@ import { LoginModule } from './login/login.module';
 import { RegisterModule } from './register/register.module';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
+import { ErrorComponent } from './error/error.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -51,7 +52,8 @@ const routes: Routes = [
     RecommendationsComponent,
     FooterComponent,
     HomeComponent,
-    SearchComponent
+    SearchComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
