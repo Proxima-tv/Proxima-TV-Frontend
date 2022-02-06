@@ -34,11 +34,7 @@ export class LoginComponent implements OnInit {
       params: params
     }).subscribe(async data => {
       console.log(JSON.stringify(data));
-      this.cookies.setCookie('proxima-login-cookie', {
-        "username": data['payload'].username,
-        "email": data['payload'].email,
-        "userid": data['payload'].userid,
-      });
+      this.cookies.setCookie('proxima-login-cookie', `${data['payload']['username']},${data['payload']['email']},${data['payload']['id']},`);
       NavbarComponent.isLoggedIn = true;
       this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
         this.router.navigate(['/profile']);

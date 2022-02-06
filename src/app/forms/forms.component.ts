@@ -12,9 +12,7 @@ export class FormsComponent implements OnInit {
   email:string;
   constructor(private router:Router) { }
   
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+  ngOnInit(): void {}
 
   redirect(){
     this.router.navigate(['/register/' + this.email]);

@@ -12,7 +12,7 @@ export class CookiesService {
    * @param cookie the cookie to receive name
    * @returns value of cookie
    */
-  getCookie(cookie:string){
+   getCookie(cookie:string){
     return this.service.get(cookie);
   }
 
@@ -33,7 +33,7 @@ export class CookiesService {
    * @param cookieName the name of the cookie to store
    * @param values the value to store inside the cookie
    */
-  setCookie(cookieName:string, values:object){
-    this.service.set(cookieName, `${values['username']},${values['email']},${values['userid']},`)
+  setCookie(cookieName:string, values:string){
+    this.service.set(cookieName, values)
   }
 }
