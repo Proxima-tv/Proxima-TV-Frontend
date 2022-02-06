@@ -12,10 +12,7 @@ import { FormsComponent } from './forms/forms.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { ServicePreviewComponent } from './service-preview/service-preview.component';
 import { SettingsComponent } from './settings/settings.component';
-import { PlayerComponent } from './player/player.component';
 import { WatchComponent } from './watch/watch.component';
-import { WatchCommentsComponent } from './watch-comments/watch-comments.component';
-import { RecommendationsComponent } from './recommendations/recommendations.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -23,11 +20,15 @@ import { LoginModule } from './login/login.module';
 import { RegisterModule } from './register/register.module';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
+<<<<<<< HEAD
 import { SearchModule } from './search/search.module';
+=======
+import { WatchModule } from './watch/watch.module';
+>>>>>>> 53f92096e23045328f1d8657cbdafe1b7a2a44ec
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
-  { path: 'stats', component: StatsComponent },
+  { path: 'profile', component: StatsComponent },
   { path: 'watch/:watch', component: WatchComponent },
   { path: 'settings', component: SettingsComponent },
   { path: 'login', component: LoginComponent },
@@ -46,21 +47,26 @@ const routes: Routes = [
     QuestionsComponent,
     ServicePreviewComponent,
     SettingsComponent,
-    PlayerComponent,
-    WatchComponent,
-    WatchCommentsComponent,
-    RecommendationsComponent,
     FooterComponent,
     HomeComponent,
+<<<<<<< HEAD
     
+=======
+    SearchComponent,
+>>>>>>> 53f92096e23045328f1d8657cbdafe1b7a2a44ec
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     LoginModule,
     RegisterModule,
+<<<<<<< HEAD
     RouterModule.forRoot(routes),
     SearchModule
+=======
+    WatchModule,
+    RouterModule.forRoot(routes)
+>>>>>>> 53f92096e23045328f1d8657cbdafe1b7a2a44ec
   ],
   providers: [],
   bootstrap: [AppComponent]

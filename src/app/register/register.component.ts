@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { last } from 'rxjs';
 import { AuthService } from '../auth.service';
 
@@ -18,7 +19,10 @@ export class RegisterComponent implements OnInit {
   lastname = null;
   name = null;
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private router:Router
+    ) { }
 
   ngOnInit(): void { }
 
@@ -39,6 +43,7 @@ export class RegisterComponent implements OnInit {
       // TODO send to auth service to register at the backend
       this.http.post<any>('http://localhost:3000/user/register', user).subscribe(data => {
         console.log(data['success']);
+        this.router.navigate(['/login']);
       });
     }
   }
