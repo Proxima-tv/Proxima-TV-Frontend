@@ -21,7 +21,11 @@ import { RegisterModule } from './register/register.module';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { SearchModule } from './search/search.module';
+=======
+import { ErrorComponent } from './error/error.component';
+>>>>>>> 09db244598214aca1f11293e596977dd34af9ed2
 =======
 import { WatchModule } from './watch/watch.module';
 >>>>>>> 53f92096e23045328f1d8657cbdafe1b7a2a44ec
@@ -53,6 +57,12 @@ const routes: Routes = [
     
 =======
     SearchComponent,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    ErrorComponent
+=======
+>>>>>>> 09db244598214aca1f11293e596977dd34af9ed2
 >>>>>>> 53f92096e23045328f1d8657cbdafe1b7a2a44ec
   ],
   imports: [
