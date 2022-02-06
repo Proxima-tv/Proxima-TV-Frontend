@@ -23,6 +23,7 @@ import { LoginModule } from './login/login.module';
 import { RegisterModule } from './register/register.module';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
+import { SearchModule } from './search/search.module';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -51,14 +52,15 @@ const routes: Routes = [
     RecommendationsComponent,
     FooterComponent,
     HomeComponent,
-    SearchComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     LoginModule,
     RegisterModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    SearchModule
   ],
   providers: [],
   bootstrap: [AppComponent]
