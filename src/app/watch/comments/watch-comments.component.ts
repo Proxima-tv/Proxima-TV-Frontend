@@ -39,7 +39,7 @@ export class WatchCommentsComponent implements OnInit {
           const rowDiv: HTMLDivElement = this.renderer.createElement('div');
           const col5Div: HTMLDivElement = this.renderer.createElement('div');
           const pbDiv: HTMLDivElement = this.renderer.createElement('div');
-          const pbImg: HTMLImageElement = this.renderer.createComment('img');
+          const pbImg: HTMLImageElement = this.renderer.createElement('img');
           const col10Div: HTMLDivElement = this.renderer.createElement('div');
           const cardBodyDiv: HTMLDivElement = this.renderer.createElement('div');
           const userH5: HTMLParagraphElement = this.renderer.createElement('h5');
@@ -61,6 +61,10 @@ export class WatchCommentsComponent implements OnInit {
           col5Div.classList.add("col-md-1");
           pbDiv.appendChild(pbImg);
           pbImg.src = "https://cdn.slpnetwork.de/img/sys/users/Thesteev.png";
+          pbImg.width = 75;
+          pbImg.height = 75;
+          pbImg.classList.add("image-fluid");
+          pbImg.classList.add("rounded-start");
           rowDiv.appendChild(col10Div);
           col10Div.appendChild(cardBodyDiv);
           col10Div.classList.add("col-md-10");
@@ -85,7 +89,7 @@ export class WatchCommentsComponent implements OnInit {
     const rowDiv: HTMLDivElement = this.renderer.createElement('div');
     const col5Div: HTMLDivElement = this.renderer.createElement('div');
     const pbDiv: HTMLDivElement = this.renderer.createElement('div');
-    const pbImg: HTMLImageElement = this.renderer.createComment('img');
+    const pbImg: HTMLImageElement = this.renderer.createElement('img');
     const col10Div: HTMLDivElement = this.renderer.createElement('div');
     const cardBodyDiv: HTMLDivElement = this.renderer.createElement('div');
     const userH5: HTMLParagraphElement = this.renderer.createElement('h5');
@@ -106,7 +110,7 @@ export class WatchCommentsComponent implements OnInit {
     col5Div.appendChild(pbDiv);
     col5Div.classList.add("col-md-1");
     pbDiv.appendChild(pbImg);
-    pbImg.src = "https://cdn.slpnetwork.de/img/sys/users/Thesteev.png";
+    pbImg.src = null;
     rowDiv.appendChild(col10Div);
     col10Div.appendChild(cardBodyDiv);
     col10Div.classList.add("col-md-10");
