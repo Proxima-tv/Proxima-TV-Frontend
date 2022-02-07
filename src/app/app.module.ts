@@ -19,16 +19,16 @@ import { RegisterComponent } from './register/register.component';
 import { LoginModule } from './login/login.module';
 import { RegisterModule } from './register/register.module';
 import { HomeComponent } from './home/home.component';
-import { SearchComponent } from './search/search.component';
 import { SearchModule } from './search/search.module';
 import { ErrorComponent } from './error/error.component';
 import { WatchModule } from './watch/watch.module';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
-  { path: 'profile', component: StatsComponent },
-  { path: 'watch/:watch', component: WatchComponent },
-  { path: 'settings', component: SettingsComponent },
+  { path: 'profile', component: StatsComponent, canActivate: [AuthGuard] },
+  { path: 'watch/:watch', component: WatchComponent, canActivate: [AuthGuard] },
+  { path: 'settings', component: SettingsComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'register/:email', component: RegisterComponent },
@@ -54,6 +54,7 @@ const routes: Routes = [
     AppRoutingModule,
     LoginModule,
     RegisterModule,
+    WatchModule,
     RouterModule.forRoot(routes),
     SearchModule
   ],

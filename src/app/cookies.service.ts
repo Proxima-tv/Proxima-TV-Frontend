@@ -12,7 +12,7 @@ export class CookiesService {
    * @param cookie the cookie to receive name
    * @returns value of cookie
    */
-   getCookie(cookie:string){
+  getCookie(cookie:string){
     return this.service.get(cookie);
   }
 
@@ -25,7 +25,11 @@ export class CookiesService {
   }
 
   deleteCookie(name:string){
-    this.service.delete(name);
+    try {
+      this.service.delete(name);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   /**

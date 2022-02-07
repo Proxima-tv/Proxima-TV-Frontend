@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CookieService } from 'ngx-cookie-service';
+import { AuthService } from '../auth.service';
+import { CookiesService } from '../cookies.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,27 +10,26 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class NavbarComponent implements OnInit {
   static isLoggedIn: Boolean;
+  username:string;
 
   constructor( 
-    private cookieService: CookieService,
+    private cookieService: CookiesService,
+    private authService: AuthService,
     private router:Router
     ) { }
 
   isLoggedIn = false;
 
   ngOnInit(): void {
+    console.log(this.authService.loggedIn());
     // checks for login cookie to ensure the proper menu is shown
-    if(this.cookieService.get('proxima-login-cookie') == "") {
-      this.isLoggedIn = false;
-    } else {
-      this.isLoggedIn = true;
-      console.log(this.cookieService.get('proxima-login-cookie'))
-    }
+    this.isLoggedIn = this.authService.loggedIn();
+    this.username = this.cookieService.getCookie('proxima-login-cookie').split(',')[0];
   }
 
   logout(){
     console.log('logout')
-    this.cookieService.delete('proxima-login-cookie')
+    this.cookieService.deleteCookie('proxima-login-cookie');
     this.isLoggedIn = false;
     this.router.navigate(['/login'])
   }
