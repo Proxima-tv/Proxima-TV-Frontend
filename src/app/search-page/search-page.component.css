@@ -1,0 +1,12 @@
+.selector {
+    border: 1px solid #bdc3c7;
+    padding: 10px;
+    transition-duration: 200ms;
+    border-radius: 5px;
+}
+.selector:hover {
+    border: 1px solid #3498db;
+}
+.selected {
+    border: 1px solid #3498db;    
+}

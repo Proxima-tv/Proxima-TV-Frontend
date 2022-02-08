@@ -9,7 +9,7 @@ import { AppModule } from '../app.module';
 })
 export class FormsComponent implements OnInit {
 
-  email:string;
+  email:any;
   constructor(private router:Router) { }
   
   ngOnInit(): void {}
