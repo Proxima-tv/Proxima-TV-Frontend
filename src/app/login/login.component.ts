@@ -31,7 +31,13 @@ export class LoginComponent implements OnInit {
 
     // this should use the body but has to revert back to using query strings
     this.http.get<any>('http://localhost:3000/user/login', {
-      params: params
+      params: params,
+      headers: {
+        "userid":this.cookies.getCookie("proxima-login-cookie").split(",")[2],
+        "usertoken": "test",
+        "premiumid": "test",
+        "platform": JSON.stringify({ "name":"test", "hash":"test" })
+      }
     }).subscribe(async data => {
       console.log(JSON.stringify(data));
       this.cookies.setCookie('proxima-login-cookie', `${data['payload']['username']},${data['payload']['email']},${data['payload']['id']},`);
