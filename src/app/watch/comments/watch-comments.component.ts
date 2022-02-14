@@ -12,6 +12,7 @@ import { CookiesService } from 'src/app/cookies.service';
 export class WatchCommentsComponent implements OnInit {
   user = this.cookies.getCookie('proxima-login-cookie').split(/[ ,]+/);
   commentContent:any;
+  commentAmnt:number;
   @ViewChild('commentList')cl:ElementRef;
   constructor( 
     private http: HttpClient,
@@ -32,6 +33,7 @@ export class WatchCommentsComponent implements OnInit {
       params: params
     }).subscribe(data => {
         console.log(data);
+        this.commentAmnt = data.length;
         for(let i = 0; i < data.length; i++) {
           // Creates HTML elements
           const li: HTMLLinkElement = this.renderer.createElement('li');
@@ -46,7 +48,6 @@ export class WatchCommentsComponent implements OnInit {
           const commentP: HTMLParagraphElement = this.renderer.createElement('p');
 
           // creates assets
-          const commentText = this.renderer.createText(data[i]['comment']);
           const usernameText = this.renderer.createText(data[i]['author']);
 
           // html assembly line
@@ -73,7 +74,7 @@ export class WatchCommentsComponent implements OnInit {
           userH5.classList.add("card-title");
           cardBodyDiv.appendChild(commentP);
           cardBodyDiv.classList.add("card-body");
-          commentP.appendChild(commentText);
+          commentP.innerHTML = data[i]['comment'];
           commentP.classList.add("card-text");
 
           this.cl.nativeElement.prepend(li);
@@ -96,7 +97,6 @@ export class WatchCommentsComponent implements OnInit {
     const commentP: HTMLParagraphElement = this.renderer.createElement('p');
 
     // creates assets
-    const commentText = this.renderer.createText(this.commentContent);
     const usernameText = this.renderer.createText(this.user[0]);
 
     // html assembly line
@@ -119,7 +119,7 @@ export class WatchCommentsComponent implements OnInit {
     userH5.classList.add("card-title");
     cardBodyDiv.appendChild(commentP);
     cardBodyDiv.classList.add("card-body");
-    commentP.appendChild(commentText);
+    commentP.innerHTML = this.commentContent;
     commentP.classList.add("card-text");
     console.log(li);
 

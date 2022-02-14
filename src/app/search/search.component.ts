@@ -9,26 +9,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SearchComponent implements OnInit {
 
-  constructor(
-    private activatedRoute: ActivatedRoute,
-    private http: HttpClient
-  ) { }
+  constructor() { }
 
   ngOnInit(): void {
-    const query = {
-      query: this.activatedRoute.snapshot.params['query']
-    };
-
-    let params = new HttpParams()
-    .set('query',JSON.stringify(query));
-
-    this.http.get<any>('http://localhost:3000/videos/search', {
-      params: params
-    }).subscribe(data => {
-      console.log(JSON.stringify(data));
-      // TODO: construct html for the page to load
-      // ALSO TODO: determing what data is needed on this exact page
-    });
   }
 
 }

@@ -23,6 +23,7 @@ import { SearchModule } from './search/search.module';
 import { ErrorComponent } from './error/error.component';
 import { WatchModule } from './watch/watch.module';
 import { AuthGuard } from './auth.guard';
+import { SearchPageComponent } from './search-page/search-page.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'register/:email', component: RegisterComponent },
+  { path: 'search/:query', component: SearchPageComponent },
 ];
 
 @NgModule({
